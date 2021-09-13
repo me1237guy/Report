@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using ReportApp.Model;
@@ -39,6 +40,44 @@ namespace ReportApp
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter)
+            {
+                Order order = new Order();
+                order.Number = textBox1.Text;
+                if (textBox1.Text.Length == 0)
+                {
+                    this.Text = "";
+                    return;
+                }
+
+                // Find the current input data in data.db
+                int cnt = daoService.GetSameOrder(order);
+
+                // the current data is already in the database
+                if (cnt > 0)
+                {
+                    List<Order> orders = daoService.GetOrder();
+                    
+                    // return the corresponding row index
+                    int pos = orders.FindIndex(a => a.Number == order.Number);
+                    if (pos > 0)
+                    {
+                        var row = pos - 1;
+                        dataGridView1.Rows[pos].Selected = true;
+                        dataGridView1.FirstDisplayedScrollingRowIndex = pos;
+                        this.Text = $"{order.Number} 舊資料";
+                    }
+                }
+                else // it's new
+                {
+                    this.Text = $"{order.Number} 新資料";
+                }
+
+            }
         }
     }
 }
