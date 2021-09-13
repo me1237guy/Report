@@ -27,7 +27,7 @@ namespace ReportApp
             var orders = daoService.GetOrder();
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = orders.ToList();
-            dataGridView1.Columns[0].Width = this.Width + 800;
+            dataGridView1.Columns[0].Width = this.Width;
 
             // set ReadOnly property
             for (int i = 1; i < dataGridView1.Columns.Count; i++)
