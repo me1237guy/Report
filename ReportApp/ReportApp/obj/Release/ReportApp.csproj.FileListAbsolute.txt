@@ -1,0 +1,17 @@
+C:\Report\ReportApp\ReportApp\bin\Release\ReportApp.exe.config
+C:\Report\ReportApp\ReportApp\bin\Release\ReportApp.exe
+C:\Report\ReportApp\ReportApp\bin\Release\ReportApp.pdb
+C:\Report\ReportApp\ReportApp\bin\Release\Dapper.Contrib.dll
+C:\Report\ReportApp\ReportApp\bin\Release\Dapper.dll
+C:\Report\ReportApp\ReportApp\bin\Release\System.Data.SQLite.dll
+C:\Report\ReportApp\ReportApp\bin\Release\Dapper.xml
+C:\Report\ReportApp\ReportApp\bin\Release\Dapper.Contrib.xml
+C:\Report\ReportApp\ReportApp\bin\Release\System.Data.SQLite.xml
+C:\Report\ReportApp\ReportApp\obj\Release\ReportApp.csprojAssemblyReference.cache
+C:\Report\ReportApp\ReportApp\obj\Release\ReportApp.Form1.resources
+C:\Report\ReportApp\ReportApp\obj\Release\ReportApp.Properties.Resources.resources
+C:\Report\ReportApp\ReportApp\obj\Release\ReportApp.csproj.GenerateResource.cache
+C:\Report\ReportApp\ReportApp\obj\Release\ReportApp.csproj.CoreCompileInputs.cache
+C:\Report\ReportApp\ReportApp\obj\Release\ReportApp.csproj.CopyComplete
+C:\Report\ReportApp\ReportApp\obj\Release\ReportApp.exe
+C:\Report\ReportApp\ReportApp\obj\Release\ReportApp.pdb
