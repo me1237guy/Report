@@ -79,5 +79,51 @@ namespace ReportApp
 
             }
         }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                AddOrder();
+                LoadData();
+                MoveToKeyRow();
+            }
+        }
+        public void AddOrder()
+        {
+            Order order = new Order();
+            order.Number = textBox1.Text;
+
+            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+            sw.Reset();  
+            sw.Start(); 
+            var count = daoService.AddOrder(order);
+            sw.Stop();
+
+            //印出所花費的總秒數
+            string result1 = sw.Elapsed.TotalSeconds.ToString();
+            if (count == 0)
+            {
+                this.Text = $"資料已寫入完成，花費:{result1} 秒";
+            }
+            else
+            {
+                this.Text = $"該筆資料重複: {order.Number} ";
+            }
+        }
+
+        private int MoveToKeyRow()
+        {
+            Order order = new Order();
+            order.Number = this.textBox1.Text;
+            var orders = daoService.GetOrder();
+            int pos = orders.FindIndex(a => a.Number == order.Number);
+            if (pos > 0)
+            {
+                dataGridView1.Rows[pos].Selected = true;
+                dataGridView1.FirstDisplayedScrollingRowIndex = pos;
+            }
+            return pos;
+        }
     }
 }
